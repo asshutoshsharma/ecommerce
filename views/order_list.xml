@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <record id="order_list_tree" model="ir.ui.view">
+            <field name="name">Order List</field>
+            <field name="model">order.list</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="order_id"/>
+                    <field name="order_name"/>
+                    <field name="order_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="order_list_form" model="ir.ui.view">
+            <field name="name">Order List</field>
+            <field name="model">order.list</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="order_id"/>
+                                <field name="order_name"/>
+                            </group>
+                            <group>
+                                <field name="order_status"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="order_list_id" model="ir.actions.act_window">
+            <field name="name">Order List</field>
+            <field name="res_model">order.list</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Order Datads" id="company_id" action="order_list_id"/>
+    </data>
+</odoo>
